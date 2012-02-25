@@ -1,0 +1,4 @@
+THIS IS NOT COMMENT//THERE IS A COMMENT
+a + b = c//2+3 / 2 = 2.5
+printf("gjhgh//hjh");//ghjgjg
+THIS IS NOT COMMENT// THERE IS A COMMENT // THERE IS A COMMENT
