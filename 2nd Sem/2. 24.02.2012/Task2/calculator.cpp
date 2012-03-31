@@ -11,8 +11,7 @@ Calculator::~Calculator()
 
 void Calculator::init(bool array)
 {
-    if (st)
-        delete st;
+    delete st;
     if (array)
         st = new ArrayStack();
     else

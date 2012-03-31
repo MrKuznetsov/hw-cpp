@@ -27,7 +27,7 @@ int main()
 
     Spiral *s = new FileSpiral();
 
-    s->Call(a, N);
+    s->ñall(a, N);
 
 
     return 0;

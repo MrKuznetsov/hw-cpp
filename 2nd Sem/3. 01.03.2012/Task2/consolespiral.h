@@ -6,10 +6,10 @@
 
 class ConsoleSpiral : public Spiral
 {
+public:
+    void ñall(int *a, int N);
 protected:
     void print(int a);
-public:
-    void Call(int *a, int N);
 };
 
 #endif // CONSOLESPIRAL_H

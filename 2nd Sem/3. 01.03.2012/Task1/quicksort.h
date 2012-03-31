@@ -5,10 +5,10 @@
 
 class QuickSort : public ArraySort
 {
-private:
-    void qsort(int *a, int low, int high, bool fromLow = true );
 public:
     void sort(int* a, int len, bool fromLow = true);
+private:
+    void qsort(int *a, int low, int high, bool fromLow = true );
 };
 
 #endif // QUICKSORT_H

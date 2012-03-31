@@ -7,12 +7,6 @@
 
 class Calculator
 {
-private:
-    Stack *st;
-    int buf[100];
-    char bufsize;
-
-    void freeStack();
 public:
     Calculator();
     ~Calculator();
@@ -22,6 +16,12 @@ public:
 
     static bool isDig(char c);
     static bool isSign(char c);
+private:
+    Stack *st;
+    int buf[100];
+    char bufsize;
+
+    void freeStack();
 };
 
 #endif // CALCULATOR_H

@@ -1,25 +1,24 @@
 #include "arraystack.h"
 
-ArrayStack::ArrayStack()
+ArrayStack::ArrayStack() : aLength(0)
 {
-    aLength = 0;
-    capacity = addCapacity;
-    vals = new int[capacity];
+    aCapacity = addCapacity;
+    aVals = new int[aCapacity];
 }
 
 ArrayStack::~ArrayStack()
 {
-    delete[] vals;
+    delete[] aVals;
 }
 
 void ArrayStack::setLength(int len)
 {
-    if (len > capacity)
+    if (len > aCapacity)
     {
-        delete[] vals;
-        while (len > capacity)
-            capacity += addCapacity;
-        vals = new int[capacity];
+        delete[] aVals;
+        while (len > aCapacity)
+            aCapacity += addCapacity;
+        aVals = new int[aCapacity];
     }
     aLength = len;
 }
@@ -27,14 +26,14 @@ void ArrayStack::setLength(int len)
 void ArrayStack::push(int val)
 {
     setLength(++aLength);
-    vals[aLength - 1] = val;
+    aVals[aLength - 1] = val;
 }
 
 int ArrayStack::pop()
 {
     if (aLength == 0)
         return 0;
-    return vals[--aLength];
+    return aVals[--aLength];
 }
 
 int ArrayStack::length()

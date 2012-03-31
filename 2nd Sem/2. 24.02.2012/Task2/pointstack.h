@@ -17,15 +17,15 @@ struct Node
 
 class PointStack : public Stack
 {
-private:
-    Node *top;
-    int len;
 public:
     PointStack();
     ~PointStack();
     void push(int val);
     int pop();
     int length();
+private:
+    Node *top;
+    int len;
 };
 
 #endif // POINTSTACK_H

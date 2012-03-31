@@ -1,8 +1,7 @@
 #include "arraylist.h"
 
-ArrayList::ArrayList()
+ArrayList::ArrayList() : length(0)
 {
-    aLength = 0;
     capacity = addCapacity;
     vals = new int[capacity];
 }
@@ -21,29 +20,29 @@ void ArrayList::setLength(int len)
             capacity += addCapacity;
         vals = new int[capacity];
     }
-    aLength = len;
+    length = len;
 }
 
 void ArrayList::addValue(int val)
 {
-    setLength(++aLength);
-    vals[aLength - 1] = val;
+    setLength(++length);
+    vals[length - 1] = val;
 }
 
 void ArrayList::removeValue(int val)
 {
     int j = 0;
-    for (int i = 0; i < aLength; i++)
+    for (int i = 0; i < length; i++)
     {
         if (vals[i] != val)
             vals[j] = vals[i];
     }
-    aLength = j + 1;
+    length = j + 1;
 }
 
 bool ArrayList::find(int val)
 {
-    for (int i = 0; i < aLength; i++)
+    for (int i = 0; i < length; i++)
     {
         if (vals[i] == val)
             return true;
@@ -51,9 +50,9 @@ bool ArrayList::find(int val)
     return false;
 }
 
-int ArrayList::length()
+int ArrayList::size()
 {
-    return aLength;
+    return length;
 }
 
 int ArrayList::get(int pos)

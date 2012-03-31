@@ -1,9 +1,8 @@
 #include "pointlist.h"
 
-PointList::PointList()
+PointList::PointList() : pNext(0), value(0)
 {
-    pNext = 0;
-    value = 0;
+
 }
 
 PointList::~PointList()
@@ -58,7 +57,7 @@ bool PointList::find(int val)
     return false;
 }
 
-int PointList::length()
+int PointList::size()
 {
     int len = 0;
     PointList *p = this;

@@ -6,12 +6,12 @@
 
 class FileSpiral : public Spiral
 {
-private:
-    FILE *f;
+public:
+    void ñall(int *a, int N);
 protected:
     void print(int a);
-public:
-    void Call(int *a, int N);
+private:
+    FILE *f;
 };
 
 #endif // FILESPIRAL_H

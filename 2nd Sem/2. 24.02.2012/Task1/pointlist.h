@@ -2,20 +2,24 @@
 #define POINTLIST_H
 
 #include "list.h"
-
+/**
+@class PointList
+Класс, наследуемый от List, позволяющий работать над списками,
+построенных на указателях
+*/
 class PointList : public List
 {
-private:
-    PointList *pNext;
-    int value;
 public:
     PointList();
     ~PointList();
     void addValue(int val);
     void removeValue(int val);
     bool find(int val);
-    int length();
+    int size();
     int get(int pos = 0);
+private:
+    PointList *pNext;
+    int value;
 };
 
 #endif // POINTLIST_H
