@@ -4,6 +4,10 @@
 #include "spiral.h"
 #include <stdio.h>
 
+/**
+@class FileSpiral
+Класс, наследуемый от Spiral, записывает пройденный путь в файл
+*/
 class FileSpiral : public Spiral
 {
 public:

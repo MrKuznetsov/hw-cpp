@@ -3,6 +3,11 @@
 
 #include "stack.h"
 
+/**
+@class ArrayStack
+ ласс, наследуемый от Stack, позвол€ющий работать со стеком
+исрпользу€ массив
+*/
 class ArrayStack : public Stack
 {
 public:

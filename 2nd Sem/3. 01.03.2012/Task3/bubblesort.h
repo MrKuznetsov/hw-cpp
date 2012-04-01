@@ -2,7 +2,10 @@
 #define BUBBLESORT_H
 
 #include "arraysort.h"
-
+/**
+@class BubbleSort
+Класс, наследуемый от ArraySort, является пузырьковой сортировкой
+*/
 class BubbleSort : public ArraySort
 {
 public:

@@ -3,6 +3,7 @@
 
 #include "stack.h"
 
+/// описание элемента списка
 struct Node
 {
     Node()
@@ -15,6 +16,12 @@ struct Node
     Node *pNext;
 };
 
+/**
+@class PointStack
+ ласс, наследуемый от Stack, позвол€ющий работать со стеком
+на списках
+*/
+
 class PointStack : public Stack
 {
 public:
@@ -24,7 +31,9 @@ public:
     int pop();
     int length();
 private:
+    /// верхний элемент списка
     Node *top;
+    /// длина списка
     int len;
 };
 

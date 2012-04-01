@@ -4,6 +4,10 @@
 #include "spiral.h"
 #include <stdio.h>
 
+/**
+@class ConsoleSpiral
+Класс, наследуемый от Spiral, записывает пройденный путь на консоль
+*/
 class ConsoleSpiral : public Spiral
 {
 public:

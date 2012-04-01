@@ -3,6 +3,10 @@
 
 #include "arraysort.h"
 
+/**
+@class QuickSort
+ ласс, наследуемый от ArraySort, €вл€етс€ быстрой сортировкой
+*/
 class QuickSort : public ArraySort
 {
 public:
