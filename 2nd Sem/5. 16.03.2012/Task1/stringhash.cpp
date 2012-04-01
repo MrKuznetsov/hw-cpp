@@ -5,7 +5,7 @@ StringHash::StringHash()
 }
 
 
-void *StringHash::add(string str)
+HashList *StringHash::add(string str)
 {
     return aHash[func->call(str)].add(str);
 }
@@ -15,7 +15,7 @@ void StringHash::remove(string str)
     aHash[func->call(str)].remove(str);
 }
 
-void *StringHash::find(string str)
+HashList *StringHash::find(string str)
 {
     return aHash[func->call(str)].find(str);
 }

@@ -10,7 +10,7 @@ StringList::~StringList()
     delete next;
 }
 
-StringList *StringList::add(string s)
+HashList *StringList::add(string s)
 {
     StringList *p = this;
     while (p->next)
@@ -51,7 +51,7 @@ void StringList::remove(string s)
     }
 }
 
-StringList *StringList::find(string s)
+HashList *StringList::find(string s)
 {
     StringList *p = next;
 

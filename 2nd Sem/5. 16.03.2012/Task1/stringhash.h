@@ -14,9 +14,9 @@ class StringHash : public Hash
 public:
     StringHash();
 
-    void *add(string str);
+    HashList *add(string str);
     void remove(string str);
-    void *find(string str);
+    HashList *find(string str);
     void status();
 private:
     /// array of lists

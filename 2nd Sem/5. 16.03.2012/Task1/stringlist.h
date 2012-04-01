@@ -2,10 +2,11 @@
 #define STRINGLIST_H
 
 #include <string>
+#include "hashlist.h"
 
 using namespace std;
 
-class StringList
+class StringList : public HashList
 {
 public:
     /// count of strings
@@ -17,11 +18,11 @@ public:
     ~StringList();
 
     /// add some string to end of list
-    StringList *add(string s);
+    HashList *add(string s);
     /// remove string from list
     void remove(string s);
     /// find string in list
-    StringList *find(string s);
+    HashList *find(string s);
 };
 
 #endif // STRINGLIST_H
