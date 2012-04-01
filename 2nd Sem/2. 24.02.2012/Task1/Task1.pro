@@ -1,6 +1,8 @@
 TEMPLATE = app
 CONFIG += console
-CONFIG -= qt
+QT += \
+             testlib\
+               core
 
 SOURCES += main.cpp \
     arraylist.cpp \
@@ -9,5 +11,7 @@ SOURCES += main.cpp \
 HEADERS += \
     list.h \
     arraylist.h \
-    pointlist.h
+    pointlist.h \
+    arraylistTest.h \
+    pointlistTest.h
 

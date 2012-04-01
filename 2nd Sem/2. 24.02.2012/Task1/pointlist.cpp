@@ -1,29 +1,26 @@
 #include "pointlist.h"
+#include <stdio.h>
 
 PointList::PointList() : pNext(0), value(0)
 {
-
+    pNext = 0;
 }
 
 PointList::~PointList()
 {
-    PointList *tmp = pNext;
-    while (tmp)
-    {
-        PointList *t = tmp->pNext;
-        delete tmp;
-        tmp = t;
-    }
+    delete pNext;
 }
 
 void PointList::addValue(int val)
 {
     PointList *p = this;
+
     while (p->pNext)
         p = p->pNext;
 
     PointList *tmp = new PointList();
     tmp->value = val;
+    tmp->pNext = 0;
     p->pNext = tmp;
 }
 
@@ -36,6 +33,7 @@ void PointList::removeValue(int val)
         if (next->value == val)
         {
             prev->pNext = next->pNext;
+            next->pNext = 0;
             delete next;
             next = prev;
         }
@@ -47,7 +45,7 @@ void PointList::removeValue(int val)
 
 bool PointList::find(int val)
 {
-    PointList *p = this;
+    PointList *p = pNext;
     while (p)
     {
         if (p->value == val)
@@ -60,7 +58,7 @@ bool PointList::find(int val)
 int PointList::size()
 {
     int len = 0;
-    PointList *p = this;
+    PointList *p = pNext;
     while (p)
     {
         len++;

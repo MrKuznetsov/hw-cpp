@@ -1,6 +1,8 @@
 TEMPLATE = app
 CONFIG += console
-CONFIG -= qt
+QT += \
+             testlib\
+               core
 
 SOURCES += main.cpp \
     arraystack.cpp \
@@ -11,5 +13,7 @@ HEADERS += \
     stack.h \
     arraystack.h \
     pointstack.h \
-    calculator.h
+    calculator.h \
+    arraystackTest.h \
+    pointstackTest.h
 

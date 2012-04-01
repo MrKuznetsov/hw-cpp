@@ -35,9 +35,9 @@ void ArrayList::removeValue(int val)
     for (int i = 0; i < length; i++)
     {
         if (vals[i] != val)
-            vals[j] = vals[i];
+            vals[j++] = vals[i];
     }
-    length = j + 1;
+    length = j;
 }
 
 bool ArrayList::find(int val)

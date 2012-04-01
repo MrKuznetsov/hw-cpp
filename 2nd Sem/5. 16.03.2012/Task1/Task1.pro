@@ -16,5 +16,6 @@ HEADERS += \
     stringhash.h \
     randomfunction.h \
     stringhashTest.h \
-    stringlistTest.h
+    stringlistTest.h \
+    hashlist.h
 

@@ -1,6 +1,8 @@
 TEMPLATE = app
 CONFIG += console
-CONFIG -= qt
+QT += \
+             testlib\
+               core
 
 SOURCES += main.cpp \
     arraysort.cpp \
@@ -10,5 +12,7 @@ SOURCES += main.cpp \
 HEADERS += \
     arraysort.h \
     bubblesort.h \
-    quicksort.h
+    quicksort.h \
+    bubblesortTest.h \
+    quicksortTest.h
 
