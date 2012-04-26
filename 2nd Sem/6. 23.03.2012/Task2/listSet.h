@@ -13,7 +13,10 @@ public:
         head = new List<T>;
     }
 
-    ~ListSet(){}
+    ~ListSet()
+    {
+        delete head;
+    }
     virtual void add(T elem);
     virtual void remove(T elem);
     virtual bool in(T elem);

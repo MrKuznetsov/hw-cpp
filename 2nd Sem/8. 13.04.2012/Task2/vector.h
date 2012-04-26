@@ -1,29 +1,41 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
+/// vector class <TYPE, SIZE>
 template<class T, int SIZE = 3>
 class Vector
 {
 public:
-    T val[SIZE];
-
     Vector()
     {
         for(int i = 0; i < SIZE; i++)
             val[i] = 0;
     }
 
+    /// check nul vector
     bool isNul() const;
+    /// sum of 2 vectors
     Vector operator+ (const Vector<T,SIZE> &v) const;
+    /// sum vector and const num
     Vector operator+ (const int &v) const;
+    /// sub of 2 vectors
     Vector operator- (const Vector<T,SIZE> &v) const;
+    /// sub vector and const num
     Vector operator- (const int &v) const;
+    /// mul vector and const num
     Vector operator* (const T &v) const;
+    /// div vector and const num
     Vector operator/ (const T &v) const;
+    /// copy vector
     Vector operator= (const Vector<T,SIZE> &v);
+    /// operator access to the values of vector
     T &operator[] (const int index);
+    /// check equality of 2 vectors
     bool operator== (const Vector<T,SIZE> &v) const;
+    /// scalar mul for 2 vectors
     T scalar(const Vector<T,SIZE> &v) const;
+private:
+    T val[SIZE];
 };
 
 
