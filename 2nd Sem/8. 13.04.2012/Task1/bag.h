@@ -5,35 +5,51 @@
 
 using namespace std;
 
+/// generic based class of multiset which use STL multiset
 template<class T>
 class Bag
 {
 public:
     class Iterator;
 
+    /// return count of elements of set
     int size() const;
+    /// return true if empty
     bool isEmpty();
+    /// insert element
     void insert(const T &elem);
+    /// remove element
     void erase(const T &elem);
+    /// remove all elements
     void clear();
+    ///  find element
     bool find(const T &elem) const;
 
+    /// return iterator on first element of set
     Iterator begin();
+    /// return iterator on last element of set
     Iterator end();
 
 private:
     multiset<T> set;
 };
 
+/// generic based iterator class which use STL multiset<T>::iterator
 template<class T>
 class Bag<T>::Iterator
 {
 public:
+    /// reload copy from Bag::iterator
     Iterator(const typename Bag<T>::Iterator &i) : it(i.it){}
+    /// reload copy from STL iterator
     Iterator(const typename multiset<T>::iterator &i) : it(i){}
+    /// reload assign
     Iterator &operator= (const typename Bag<T>::Iterator &i);
+    /// reload ++
     Iterator &operator++ ();
+    /// reload equeal
     bool operator== (const typename Bag<T>::Iterator &i);
+    /// reload *
     T operator* ();
 private:
    typename multiset<T>::iterator it;
