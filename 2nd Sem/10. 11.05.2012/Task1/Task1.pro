@@ -11,8 +11,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    tictactoe.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    tictactoe.h \
 
 FORMS    += mainwindow.ui

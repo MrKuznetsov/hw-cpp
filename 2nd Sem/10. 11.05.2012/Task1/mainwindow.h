@@ -6,6 +6,8 @@
 #include <QSignalMapper>
 #include <QString>
 
+#include "tictactoe.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -17,16 +19,11 @@ class MainWindow : public QMainWindow
 public:
      QPushButton *buttons[9];
      QSignalMapper *numMap;
-     /// current player
-     int player;
-     int table[3][3];
+     TicTacToe game;
+     bool isFinished;
+
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-     /// check current player if he win
-     bool checkWin(int i);
-     bool checkVertical(int x);
-     bool checkHorizontal(int y);
-     bool checkDiagonals();
     
 private:
     Ui::MainWindow *ui;
