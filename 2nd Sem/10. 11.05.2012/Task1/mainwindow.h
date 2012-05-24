@@ -17,15 +17,23 @@ class MainWindow : public QMainWindow
 public:
      QPushButton *buttons[9];
      QSignalMapper *numMap;
-     bool player;
+     /// current player
+     int player;
+     int table[3][3];
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+     /// check current player if he win
+     bool checkWin(int i);
+     bool checkVertical(int x);
+     bool checkHorizontal(int y);
+     bool checkDiagonals();
     
 private:
     Ui::MainWindow *ui;
 
 public slots:
     void numClicked(int i);
+    void restart();
 };
 
 #endif // MAINWINDOW_H
