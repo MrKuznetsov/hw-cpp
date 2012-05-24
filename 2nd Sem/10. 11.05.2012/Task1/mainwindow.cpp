@@ -16,10 +16,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(numMap, SIGNAL(mapped(int)), this, SLOT(numClicked(int)));
     for (int i = 0; i < 9; i++)
     {
-      //  QString text = QString::number(i);
         buttons[i] = new QPushButton("", this);
-
-    //    buttons[i]->geometry().
+        buttons[i]->setFont(QFont("MS Shell Dlg2", 30));
         numMap->setMapping(buttons[i], i);
         connect(buttons[i], SIGNAL(clicked()), numMap, SLOT(map()));
     }
@@ -53,7 +51,7 @@ inline bool MainWindow::checkDiagonals()
     for (int i = 0; i < 3; i++)
     {
         first = first & table[i][i] == player;
-        second = second & table[3 - i][i] == player;
+        second = second & table[2 - i][i] == player;
     }
     return first || second;
 }
@@ -98,5 +96,7 @@ void MainWindow::restart()
 
 MainWindow::~MainWindow()
 {
+    for (int i = 0; i < 9; i++)
+        delete buttons[i];
     delete ui;
 }
