@@ -6,71 +6,31 @@ class AntiVirus
 {
 protected:
 	int safety;
+	AntiVirus() : safety(0){}
 public:
-	AntiVirus()
-	{
-		safety = 0;
-	}
-	const int getSafety()
-	{
-		return safety;
-	}
+	const int getSafety();
+	virtual void print();
 
-	virtual void print()
-	{
-		std::cout << "AV: ";
-	}
-
-	static AntiVirus *Instance()
-	{
-		static AntiVirus inst;
-		return &inst;
-	}
+	static AntiVirus *Instance();
 };
 
 class Nod32 : AntiVirus
 {
+private:
+	Nod32() {safety = 30;}
 public:
-	Nod32()
-	{
-		safety = 30;
-	}
-	const int getSafety()
-	{
-		return safety;
-	}
-	void print()
-	{
-		AntiVirus::print();
-		std::cout << "Nod32\n";
-	}
-	static Nod32 *Instance()
-	{
-		static Nod32 inst;
-		return &inst;
-	}
+	void print();
+
+	static Nod32 *Instance();
 };
 
 class Kaspersky : AntiVirus
 {
+private:
+	Kaspersky() { safety = 40;}
 public:
-	Kaspersky()
-	{
-		safety = 53;
-	}
-	const int getSafety()
-	{
-		return safety;
-	}
-	void print()
-	{
-		AntiVirus::print();
-		std::cout << "Kaspersky\n";
-	}
-	static Kaspersky *Instance()
-	{
-		static Kaspersky inst;
-		return &inst;
-	}
+	void print();
+
+	static Kaspersky *Instance();
 };
 

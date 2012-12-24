@@ -11,112 +11,65 @@ class OperatingSystem
 {
 protected:
 	int chance;
+	OperatingSystem() : chance(0){}
 public:
-	OperatingSystem()
-	{
-		chance = 0;
-	}
+	virtual void printOS();
+	void print();
+	int getChance();
 
-	virtual void printOS() {std::cout << "Os: ";}
-
-	void print()
-	{
-		printOS();
-		std::cout << '\n';
-	}
-
-	int getChance()
-	{
-		return chance;
-	}
-
-	static OperatingSystem *Instance()
-	{
-		static OperatingSystem inst;
-		return &inst;
-	}
+	static OperatingSystem *Instance();
 };
 
 class WindowsXP : OperatingSystem
 {
-public:
-	WindowsXP() : OperatingSystem() 
+protected:
+	WindowsXP() : OperatingSystem()
 	{
 		chance = 20;
 	}
+public:
+	void printOS();
 
-	void printOS() 
-	{
-		OperatingSystem::printOS();
-		std::cout << "WindowsXP";
-	}
-
-	static WindowsXP *Instance()
-	{
-		static WindowsXP inst;
-		return &inst;
-	}
+	static WindowsXP *Instance();
 };
 
 class Windows7 : OperatingSystem
 {
-public:
+protected:
 	Windows7() : OperatingSystem() 
 	{
 		chance = 30;
 	}
 
-	void printOS() 
-	{
-		OperatingSystem::printOS();
-		std::cout << "Windows7";
-	}
+public:
+	void printOS() ;
 
-	static Windows7 *Instance()
-	{
-		static Windows7 inst;
-		return &inst;
-	}
+	static Windows7 *Instance();
 };
 
 class Linux : OperatingSystem
 {
-public:
+protected:
 	Linux() : OperatingSystem() 
 	{
 		chance = 25;
 	}
+public:
+	void printOS() ;
 
-	void printOS() 
-	{
-		OperatingSystem::printOS();
-		std::cout << "Linux";
-	}
-
-	static Linux *Instance()
-	{
-		static Linux inst;
-		return &inst;
-	}
+	static Linux *Instance();
 };
 
 class Mac : OperatingSystem
 {
-public:
+protected:
 	Mac() : OperatingSystem() 
 	{
 		chance = 30;
 	}
 
-	void printOS() 
-	{
-		OperatingSystem::printOS();
-		std::cout << "Mac";
-	}
+public:
+	void printOS();
 
-	static Mac *Instance()
-	{
-		static Mac inst;
-		return &inst;
-	}
+	static Mac *Instance();
 };

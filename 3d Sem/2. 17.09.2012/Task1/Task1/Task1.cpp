@@ -2,17 +2,21 @@
 #include <tchar.h>
 
 #include "Net.h"
+#include "test.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	NetTest test;
+	test.Run();
+
 	Net * net = new Net();
 
-	net->Init();
+	net->init();
 
 	while(true)
 	{
 		char i = 0;
-		net->DoStep();
+		net->doStep();
 
 		i = getchar();
 		if (i == 'q')
@@ -23,7 +27,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 		if (i == 'i')
 		{
-			net->ShowInf();
+			net->showInf();
 			system("pause");
 		}
 		//system("pause");
