@@ -3,12 +3,12 @@ module Main
 		import System.IO
 		
 		addToSorted :: Int -> [Int] -> [Int]
-		addToSorted  a xs = helper a [] xs
-			where 
-				helper a ys [] = ys ++ [a]
-				helper a ys (z:zs) = if a <= z
-									 then ys ++ (a:z:zs)
-									 else helper a (ys ++ [z]) zs
+		addToSorted a [] = [a]
+		addToSorted a (x:xs) | x == a = x:xs
+							 | x > a = a:x:xs
+							 | otherwise = x : (addToSorted a xs)
+		
+		
 		main = do
 			hSetBuffering stdin LineBuffering
 			doLoop []

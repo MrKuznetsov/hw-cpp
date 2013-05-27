@@ -8,4 +8,3 @@ isCorrect (x:xs) = helper 0 (x:xs)
 										  else if y == ')'
 										  then helper (a - 1) ys
 										  else helper a ys
-
